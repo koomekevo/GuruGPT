@@ -11,9 +11,25 @@ body {
   background: #343541;
 }
 
+.navbar {
+  background-color: transparent;
+  overflow: hidden;
+  border-bottom: 1px solid #fff;
+  position: sticky;
+  top: 0;
+}
+
+.navbar h1 {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 #app {
   width: 100vw;
-  height: 90vh;
+  height: 85vh;
   background: #343541;
 
   display: flex;
