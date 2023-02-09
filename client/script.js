@@ -1,4 +1,4 @@
-import bot from "./assets/bot.svg";
+dimport bot from "./assets/bot.svg";
 import user from "./assets/user.svg";
 
 const form = document.querySelector("form");
@@ -37,4 +37,19 @@ function generateUniqueId() {
   const hexadecimalString = randomNumber.toString(16);
 
   return `id-${timestamp}-${hexadecimalString}`;
+}
+
+function chatStripe = (isAi, value, uniqueId) {
+  return (
+    `
+      <div class="wrapper ${isAi && 'ai'}">
+        <div class="chat>
+          <div className="profile">
+            <img src="${isAi ? bot : user}" alt="{isAi ? 'bot' : 'user'}" />
+          <div>
+          <div class="message" id=${uniqueId}>${value}</div>
+        </div>
+      </div>   
+    `
+  )
 }
