@@ -66,7 +66,15 @@ const handleSubmit = async (e) => {
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
-  chatContainer.scrollTop = chatContainer.scrollHeight;
+  const responseInterval = setInterval(function () {
+    if (chatContainer.scrollHeight > chatContainer.clientHeight) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }, 3000);
+
+  setTimeout(function(){
+    clearInterval(responseInterval);
+  }, 90000);
 
   const messageDiv = document.getElementById(uniqueId);
 
