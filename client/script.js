@@ -28,7 +28,7 @@ function typeText(element, text) {
     } else {
       clearInterval(interval);
     }
-  }, 20);
+  }, 40);
 }
 
 function generateUniqueId() {
@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
     if (chatContainer.scrollHeight > chatContainer.clientHeight) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-  }, 3000);
+  }, 200);
 
   setTimeout(function(){
     clearInterval(responseInterval);
