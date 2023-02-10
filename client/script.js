@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
 
   setTimeout(function(){
     clearInterval(responseInterval);
-  }, 90000);
+  }, 120000);
 
   const messageDiv = document.getElementById(uniqueId);
 
