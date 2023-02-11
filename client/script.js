@@ -67,12 +67,13 @@ const handleSubmit = async (e) => {
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
   const responseInterval = setInterval(function () {
-    if (chatContainer.scrollHeight > chatContainer.clientHeight) {
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
+    chatContainer.scrollTop =
+      chatContainer.scrollHeight - chatContainer.clientHeight;
   }, 50);
 
-  if (chatContainer.scrollTop === chatContainer.scrollHeight) {
+  // Check if we have reached the end of the scrollable area
+  if (chatContainer.scrollTop === chatContainer.scrollHeight - chatContainer.clientHeight) {
+    // Clear the interval if we have reached the end
     clearInterval(responseInterval);
   }
 
