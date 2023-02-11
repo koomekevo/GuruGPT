@@ -67,15 +67,18 @@ const handleSubmit = async (e) => {
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
   const responseInterval = setInterval(function () {
-    chatContainer.scrollTop =
-      chatContainer.scrollHeight - chatContainer.clientHeight;
-  }, 50);
+    if (chatContainer.scrollHeight > chatContainer.clientHeight) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }, 200);
 
-  // Check if we have reached the end of the scrollable area
-  if (chatContainer.scrollTop === chatContainer.scrollHeight - chatContainer.clientHeight) {
-    // Clear the interval if we have reached the end
+  window.addEventListener("scroll", () => {
     clearInterval(responseInterval);
-  }
+  });
+
+  window.addEventListener("wheel", () => {
+    clearInterval(responseInterval);
+  });
 
   const messageDiv = document.getElementById(uniqueId);
 

@@ -9,6 +9,7 @@
 
 body {
   background: #343541;
+  overflow-y: scroll;
 }
 
 .navbar {
@@ -49,7 +50,7 @@ body {
   gap: 10px;
 
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: thin;
 
   padding-bottom: 20px;
   scroll-behavior: smooth;
