@@ -80,6 +80,10 @@ const handleSubmit = async (e) => {
     clearInterval(responseInterval);
   });
 
+  window.addEventListener("touchstart", () => {
+    clearInterval(responseInterval);
+  });
+
   const messageDiv = document.getElementById(uniqueId);
 
   loader(messageDiv);
