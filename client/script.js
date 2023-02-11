@@ -70,11 +70,11 @@ const handleSubmit = async (e) => {
     if (chatContainer.scrollHeight > chatContainer.clientHeight) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-  }, 10000);
+  }, 50);
 
-  setTimeout(function(){
+  if (chatContainer.scrollTop === chatContainer.scrollHeight) {
     clearInterval(responseInterval);
-  }, 50000);
+  }
 
   const messageDiv = document.getElementById(uniqueId);
 
