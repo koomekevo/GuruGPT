@@ -13,11 +13,13 @@ body {
 }
 
 .navbar {
+  display: flex;
   background-color: transparent;
   overflow: hidden;
   border-bottom: 1px solid #fff;
   position: sticky;
   top: 0;
+  justify-content: space-between;
 }
 
 .navbar h1 {
@@ -26,6 +28,20 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.socialmedia {
+  margin-top: 12px;
+  margin-right: 12px;
+  justify-content: space-around;
+}
+
+.fb {
+  margin-right: 6px;
+}
+
+.twitter {
+  margin-left: 6px;
 }
 
 #app {
